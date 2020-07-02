@@ -33,8 +33,8 @@ weatherform.addEventListener('submit',(e) => {
             // document.getElementById('summary').innerHTML=data.summary
             messageOne.textContent= data.location
             messageTwo.textContent = data.summary
-            message3.textContent = data.max
-            message4.textContent = data.min
+            message3.textContent = "max temp "+data.max+" F"
+            message4.textContent = "min temp "+data.min+" F"
         }
         
     })
