@@ -2,6 +2,8 @@ const weatherform = document.querySelector('form')
 const search = document.querySelector('input')
 const messageOne = document.querySelector('#location')
 const messageTwo = document.querySelector('#summary')
+const message3 = document.querySelector('#max')
+const message4 = document.querySelector('#min')
 
 
 
@@ -10,6 +12,8 @@ weatherform.addEventListener('submit',(e) => {
     const location = search.value
     messageOne.textContent='Fetching Data.......'
     messageTwo.textContent = ''
+    message3.textContent = ''
+    message4.textContent = ''
 
 
     fetch('/weather?address='+location).then((response) => {
@@ -19,6 +23,8 @@ weatherform.addEventListener('submit',(e) => {
             //document.getElementById('error').innerHTML=data.error
             messageOne.textContent=data.error
             messageTwo.textContent = ''
+            message3.textContent = ''
+            message4.textContent = ''
         }
         else{
             // console.log(data.location)
@@ -27,6 +33,8 @@ weatherform.addEventListener('submit',(e) => {
             // document.getElementById('summary').innerHTML=data.summary
             messageOne.textContent= data.location
             messageTwo.textContent = data.summary
+            message3.textContent = data.max
+            message4.textContent = data.min
         }
         
     })
