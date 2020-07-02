@@ -7,6 +7,8 @@ const keyvalue = require('./utils/key')
 
 const app = express()
 
+const port = process.env.PORT || 3000
+
 // define paths for express config
 const publicfolderpath = path.join(__dirname,'../public')
 const viewspath = path.join(__dirname,'../templates/views')
@@ -104,6 +106,6 @@ app.get('*',(req,res)=>{
 
 
 
-app.listen(3000,()=>{
-    console.log('server started at port no 3000')
+app.listen(port,()=>{
+    console.log('server started at port no '+port)
 })
